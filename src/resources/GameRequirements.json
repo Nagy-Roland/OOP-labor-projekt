@@ -1,0 +1,238 @@
+{
+  "games": [
+    {
+      "name": "Rainbow Six Siege",
+      "requirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i3-560 @ 3.3GHz or AMD Phenom II X4 945 @ 3.0GHz",
+          "graphics": "NVIDIA GeForce GTX 460 or AMD Radeon HD 5770",
+          "memory": "6 GB RAM",
+          "storage": "30 GB SSD"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-2500K or AMD FX-8120",
+          "graphics": "NVIDIA GeForce GTX 670 or AMD Radeon HD 7970",
+          "memory": "8 GB RAM",
+          "storage": "30 GB SSD"
+        },
+        "maximum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i9-12900K or AMD Ryzen 9 7900X",
+          "graphics": "NVIDIA GeForce RTX 4090 or AMD Radeon RX 7900 XTX",
+          "memory": "32 GB RAM",
+          "storage": "30 GB SSD"
+        }
+      }
+    },
+    {
+      "name": "For Honor",
+      "requirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i3-4150 @ 3.5GHz or AMD FX-4300 @ 3.8GHz",
+          "graphics": "NVIDIA GeForce GTX 950 or AMD Radeon R9 270",
+          "memory": "4 GB RAM",
+          "storage": "42 GB SSD"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-7500 or AMD Ryzen 5 1400",
+          "graphics": "NVIDIA GeForce GTX 1060 with 3 GB VRAM or AMD Radeon RX 580 with 4 GB VRAM",
+          "memory": "8 GB RAM",
+          "storage": "42 GB SSD"
+        },
+        "maximum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i9-12900K or AMD Ryzen 9 7900X",
+          "graphics": "NVIDIA GeForce RTX 4090 or AMD Radeon RX 7900 XTX",
+          "memory": "32 GB RAM",
+          "storage": "42 GB SSD"
+        }
+      }
+    },
+    {
+      "name": "Naraka Bladepoint",
+      "requirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel i5 4th-Gen or AMD FX 6300",
+          "graphics": "NVIDIA GeForce GTX 750 Ti or equivalent",
+          "memory": "8 GB RAM",
+          "storage": "20 GB SSD"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel i7 7th generation or equivalent",
+          "graphics": "NVIDIA GeForce GTX 1060 6GB or AMD RX 480",
+          "memory": "16 GB RAM",
+          "storage": "20 GB SSD"
+        },
+        "maximum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i9-12900K or AMD Ryzen 9 7900X",
+          "graphics": "NVIDIA GeForce RTX 4090 or AMD Radeon RX 7900 XTX",
+          "memory": "32 GB RAM",
+          "storage": "20 GB SSD"
+        }
+      }
+    },
+    {
+      "name": "League of Legends",
+      "requirements": {
+        "minimum": {
+          "os": "Windows 10 (Build 19041+)",
+          "processor": "Intel Core i3-530 or AMD A6-3650",
+          "graphics": "NVIDIA GeForce 9600GT or AMD HD 6570",
+          "memory": "2 GB RAM",
+          "storage": "16 GB HDD"
+        },
+        "recommended": {
+          "os": "Windows 10 (Build 19041+)",
+          "processor": "Intel Core i5-3300 or AMD Ryzen 3 1200",
+          "graphics": "NVIDIA GeForce 560 or AMD Radeon HD 6950",
+          "memory": "4 GB RAM",
+          "storage": "16 GB HDD"
+        },
+        "maximum": {
+          "os": "Windows 10 (Build 19041+)",
+          "processor": "Intel Core i9-12900K or AMD Ryzen 9 7900X",
+          "graphics": "NVIDIA GeForce RTX 4090 or AMD Radeon RX 7900 XTX",
+          "memory": "32 GB RAM",
+          "storage": "16 GB SSD"
+        }
+      }
+    },
+    {
+      "name": "Titanfall 2",
+      "requirements": {
+        "minimum": {
+          "os": "Windows 7/8/8.1/10 (64-bit)",
+          "processor": "Intel Core i3-6300T or equivalent",
+          "graphics": "NVIDIA GeForce GTX 660 2GB or AMD Radeon HD 7850 2GB",
+          "memory": "8 GB RAM",
+          "storage": "45 GB SSD"
+        },
+        "recommended": {
+          "os": "Windows 7/8/8.1/10 (64-bit)",
+          "processor": "Intel Core i5-6600K or AMD Ryzen 5 1600",
+          "graphics": "NVIDIA GeForce GTX 1060 6GB or AMD Radeon RX 580 8GB",
+          "memory": "16 GB RAM",
+          "storage": "45 GB SSD"
+        },
+        "maximum": {
+          "os": "Windows 7/8/8.1/10 (64-bit)",
+          "processor": "Intel Core i9-12900K or AMD Ryzen 9 7900X",
+          "graphics": "NVIDIA GeForce RTX 4090 or AMD Radeon RX 7900 XTX",
+          "memory": "32 GB RAM",
+          "storage": "45 GB SSD"
+        }
+      }
+    },
+    {
+      "name": "Team Fortress 2",
+      "requirements": {
+        "minimum": {
+          "os": "Windows 7 (32/64-bit)/Vista/XP",
+          "processor": "1.7 GHz Processor",
+          "graphics": "Any DirectX 9 compatible graphics card",
+          "memory": "512 MB RAM",
+          "storage": "15 GB HDD"
+        },
+        "recommended": {
+          "os": "Windows 7 (32/64-bit)",
+          "processor": "Pentium 4 3.0 GHz or better",
+          "graphics": "DirectX 9 compatible graphics card",
+          "memory": "1 GB RAM",
+          "storage": "15 GB HDD"
+        },
+        "maximum": {
+          "os": "Windows 7 (32/64-bit)",
+          "processor": "Intel Core i9-12900K or AMD Ryzen 9 7900X",
+          "graphics": "NVIDIA GeForce RTX 4090 or AMD Radeon RX 7900 XTX",
+          "memory": "32 GB RAM",
+          "storage": "15 GB SSD"
+        }
+      }
+    },
+    {
+      "name": "Elden Ring",
+      "requirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-8400 or AMD Ryzen 3 3300X",
+          "graphics": "NVIDIA GeForce GTX 1060 (3GB) or AMD Radeon RX 580 (4GB)",
+          "memory": "12 GB RAM",
+          "storage": "60 GB SSD"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i7-8700K or AMD Ryzen 5 3600X",
+          "graphics": "NVIDIA GeForce GTX 1070 (8GB) or AMD Radeon RX Vega 56 (8GB)",
+          "memory": "16 GB RAM",
+          "storage": "60 GB SSD"
+        },
+        "maximum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i9-12900K or AMD Ryzen 9 7900X",
+          "graphics": "NVIDIA GeForce RTX 4090 or AMD Radeon RX 7900 XTX",
+          "memory": "32 GB RAM",
+          "storage": "60 GB SSD"
+        }
+      }
+    },
+    {
+      "name": "Sekiro: Shadows Die Twice",
+      "requirements": {
+        "minimum": {
+          "os": "Windows 7 64-bit",
+          "processor": "Intel Core i3-6300 3.8 GHz or AMD Ryzen 3 1200",
+          "graphics": "NVIDIA GeForce GTX 760 or AMD Radeon HD 7950",
+          "memory": "4 GB RAM",
+          "storage": "25 GB SSD"
+        },
+        "recommended": {
+          "os": "Windows 7 64-bit",
+          "processor": "Intel Core i5-2500K or AMD Ryzen 5 1400",
+          "graphics": "NVIDIA GeForce GTX 970 or AMD Radeon RX 480",
+          "memory": "8 GB RAM",
+          "storage": "25 GB SSD"
+        },
+        "maximum": {
+          "os": "Windows 7 64-bit",
+          "processor": "Intel Core i9-12900K or AMD Ryzen 9 7900X",
+          "graphics": "NVIDIA GeForce RTX 4090 or AMD Radeon RX 7900 XTX",
+          "memory": "32 GB RAM",
+          "storage": "25 GB SSD"
+        }
+      }
+    },
+    {
+      "name": "Wolfenstein II: The New Colossus",
+      "requirements": {
+        "minimum": {
+          "os": "Windows 7 64-bit",
+          "processor": "Intel Core i5-2400 or AMD Ryzen 5 1200",
+          "graphics": "NVIDIA GeForce GTX 770 or AMD Radeon R9 380",
+          "memory": "8 GB RAM",
+          "storage": "55 GB SSD"
+        },
+        "recommended": {
+          "os": "Windows 7 64-bit",
+          "processor": "Intel Core i7-4770 or AMD FX-9370",
+          "graphics": "NVIDIA GeForce GTX 770 or AMD Radeon R9 380",
+          "memory": "8 GB RAM",
+          "storage": "55 GB SSD"
+        },           
+        "maximum": {
+          "os": "Windows 7 64-bit",
+          "processor": "Intel Core i5-2400 or AMD Ryzen 5 1200",
+          "graphics": "NVIDIA GTX 1060 or AMD Radeon RX 470 ",
+          "memory": "16 GB RAM",
+          "storage": "55 GB SSD"
+        }
+    }
+}    
+    
+                
