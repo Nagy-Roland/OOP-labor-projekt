@@ -11,13 +11,16 @@ import java.util.List;
  */
 public class GameList {
     
-   private List<GameSpecs> games = new ArrayList<>();
+   private List<Game> games = new ArrayList<>();
    
-   public List<GameSpecs> getGames(){
-       return games;
-   }
+   public GameList(){} 
    
-   public void setGames(List<GameSpecs> games){
+    public void setGames(List<Game> games){
        this.games = games;
    }
+   
+   public List<Game> getGames(){
+       return games;
+   }
+    
 }
