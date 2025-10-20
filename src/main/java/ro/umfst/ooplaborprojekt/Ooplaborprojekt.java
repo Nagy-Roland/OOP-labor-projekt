@@ -22,19 +22,17 @@ public class Ooplaborprojekt {
         try{
                 
             ObjectMapper mapper = new ObjectMapper();
-                InputStream inputStream = Ooplaborprojekt.class.getClassLoader().getResourceAsStream("/GameRequirements.json"); 
+                InputStream inputStream = Ooplaborprojekt.class.getClassLoader().getResourceAsStream("GameRequirements.json"); 
                 
-                    try{ 
+                    
                         
-                        GameList gameList = mapper.readValue(inputStream,GameList.class);                        
-                        System.out.println(gameList.getGames());
+                         GameList gameList = mapper.readValue(inputStream, GameList.class);
+                         
                      
-                    }catch(Exception jsonReadError){
-                        System.out.println("Json file cant be read!");
-                    }
-                 
+                      
         }catch(Exception jsonNotFound){           
             System.out.println("Json file is not found!");
+              jsonNotFound.printStackTrace();
         }
                        
       
