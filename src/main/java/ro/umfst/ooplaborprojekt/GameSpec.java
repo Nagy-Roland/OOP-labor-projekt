@@ -22,9 +22,9 @@ public class GameSpec {
         this.processor = processor;
         this.graphics = graphics;
         this.memory = memory;
-        this.storage = storage;
+        this.storage = storage;        
+        }
         
-    }
     public void setOs(String os){
         this.os = os;     
     }   
