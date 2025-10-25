@@ -10,14 +10,17 @@ package ro.umfst.ooplaborprojekt;
  */
 public class UsersPc {
     
+    private int id;
     private int performanceScore;
     private String os;
     private String processor;
     private String graphics;
     private String memory;
     private String storage;
-    
-        public UsersPc(int performanceScore,String os,String processor,String graphics,String memory,String storage){
+        
+        UsersPc(){};
+        public UsersPc(int id,int performanceScore,String os,String processor,String graphics,String memory,String storage){
+        this.id = id;    
         this.performanceScore = performanceScore;
         this.os = os;
         this.processor = processor;
@@ -26,6 +29,10 @@ public class UsersPc {
         this.storage = storage;
         }
     
+    public void setId(int id){
+        this.id = id;
+    }   
+        
     public void setPerformanceScore(int performanceScore){
         this.performanceScore = performanceScore;
     }    
@@ -49,6 +56,10 @@ public class UsersPc {
     public void setStorage(String storage){
         this.storage = storage;
     } 
+    
+    public int getId(){
+        return id;
+    }
     
     public int getPerformanceScore(){
         return performanceScore;
