@@ -32,6 +32,18 @@ public class Ooplaborprojekt extends JFrame {
            
     }
     
+    public Connection connect() {
+        
+        try {
+        
+            String url = "jdbc:sqlite:UsersPcSetup.db";
+                return DriverManager.getConnection(url);
+        
+        } catch (Exception connectionFailed) {
+            connectionFailed.printStackTrace();
+                return null;
+    }
+    }
     public void primaryJframeInitialization(){
         
         framePrimary = new JFrame("System requirement check");
@@ -111,11 +123,11 @@ public class Ooplaborprojekt extends JFrame {
             ObjectMapper mapper = new ObjectMapper();
                 InputStream inputStream = Ooplaborprojekt.class.getClassLoader().getResourceAsStream("GameRequirements.json");
                 
-            }catch(Exception jsonNotFound){   
+        }catch(Exception jsonNotFound){   
                 
-                System.out.println("Json file is not found!");
-                    jsonNotFound.printStackTrace();
-            }  
+            System.out.println("Json file is not found!");
+                jsonNotFound.printStackTrace();
+        }  
     }
     
     public void setInputUsersPc(JTextField osField,JTextField cpuField,JTextField gpuField,JTextField memoryField,JTextField storageField){
