@@ -19,9 +19,10 @@ import java.sql.DriverManager;
  * @author Laptop
  */
 public class Ooplaborprojekt extends JFrame {
-    
+    DatabaseHelper db = new DatabaseHelper();
     JFrame frameResults;
     JFrame framePrimary;
+    JFrame frameIdResults;
     
     public static void main(String[] args) {
         
@@ -32,18 +33,8 @@ public class Ooplaborprojekt extends JFrame {
            
     }
     
-    public Connection connect() {
-        
-        try {
-        
-            String url = "jdbc:sqlite:UsersPcSetup.db";
-                return DriverManager.getConnection(url);
-        
-        } catch (Exception connectionFailed) {
-            connectionFailed.printStackTrace();
-                return null;
-    }
-    }
+   
+    
     public void primaryJframeInitialization(){
         
         framePrimary = new JFrame("System requirement check");
@@ -100,6 +91,9 @@ public class Ooplaborprojekt extends JFrame {
             @Override
                 public void actionPerformed(ActionEvent e) {
                       setInputUsersPc(osField,cpuField,gpuField,memoryField,storageField);
+                      db.connect();
+                      db.createTable();
+                      db.close();
                       showResults();
                 }
         }); 
@@ -117,6 +111,32 @@ public class Ooplaborprojekt extends JFrame {
         frameResults.add(panel2);          
     }
      
+    public void idBasedResultsJframeInitialization(){
+        
+        frameIdResults = new JFrame("Id based results");
+        JPanel panel3 = new JPanel();
+        
+        frameResults.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameResults.setSize(1000, 800);
+        
+        panel3.setLayout(new BoxLayout(panel3, BoxLayout.Y_AXIS));
+        
+        JLabel idLabel = new JLabel("Enter your ID:");
+            JTextField idField = new JTextField(20);
+            
+        JButton searchButton = new JButton("Search");     
+         
+        JTextArea resultsArea = new JTextArea();
+        resultsArea.setEditable(false);
+        
+        panel3.add(idLabel);
+        panel3.add(idField);
+        panel3.add(searchButton);
+        panel3.add(resultsArea);
+        
+        frameIdResults.add(panel3);
+    }
+    
     public void jsonRead(){
         try{
                 
