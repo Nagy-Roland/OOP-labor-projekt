@@ -9,6 +9,9 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Scanner;
+import java.io.File;
+
 /**
  *
  * @author Laptop
@@ -18,16 +21,21 @@ public class DatabaseHelper {
     private Connection connUsers; 
     private Connection connComps;
             
-    public Connection connect(String url) {
-        
-        try {                  
-                return DriverManager.getConnection(url);
-        
-        } catch (Exception connectionFailed) {
-            connectionFailed.printStackTrace();
-                return null; 
+     public void connectUsers(String url) {
+        try {
+            connUsers = DriverManager.getConnection(url);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        
+    }
+
+   
+    public void connectComps(String url) {
+        try {
+            connComps = DriverManager.getConnection(url);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
      
     public void createUserTable(){
@@ -52,8 +60,8 @@ public class DatabaseHelper {
     
     public void ceatePcComponentTable(String componentName){
         
-        String sql = "CREATE TABLE IF NOT EXISTS"+ componentName 
-            + "(Id INTEGER PRIMARY KEY AUTOINCREMENT,"
+        String sql = "CREATE TABLE IF NOT EXISTS " + componentName 
+            + " (Id INTEGER PRIMARY KEY AUTOINCREMENT,"
             + "Name TEXT NOT NULL,"
             + "Perfscore INTEGER)";
         
@@ -84,15 +92,36 @@ public class DatabaseHelper {
         }
     }
     
-    public void insertDataComponents(String componentName,String name,int perfScore ){
+    public void insertDataComponentsSql(String componentName,String name,int perfScore ){
         
-        String sql = "INSERT INTO" + componentName + "(Name,Perfscore)VALUES("+name+perfScore+")";
+        String sql = "INSERT INTO " + componentName + "(Name,Perfscore)VALUES(?,?)";
         
         try(PreparedStatement pstmt = connComps.prepareStatement(sql)){
         
         pstmt.setString(1,name);    
         pstmt.setInt(2, perfScore);
+        pstmt.executeUpdate();
         }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void fileReadAndWrite(String filePath){
+        File myObj = new File(filePath);
+        try(Scanner reader = new Scanner(myObj)){
+            while(reader.hasNextLine()){
+                String line = reader.nextLine();
+                String parsedData[] = line.split(",");
+                if(parsedData.length == 3){
+                    String componentName = parsedData[0];
+                    String name = parsedData[1];
+                    int perfScore = Integer.parseInt(parsedData[2]);
+                    insertDataComponentsSql(componentName,name,perfScore);
+                    System.out.println(componentName+name+perfScore);
+                }
+            }
+        }catch(Exception e){
+            System.out.println("Error reading file!");
             e.printStackTrace();
         }
     }
