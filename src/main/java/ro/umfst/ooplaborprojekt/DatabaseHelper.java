@@ -15,13 +15,12 @@ import java.sql.SQLException;
  */
 public class DatabaseHelper {
     
-    private Connection conn; 
-    
-    public Connection connect() {
+    private Connection connUsers; 
+    private Connection connComps;
+            
+    public Connection connect(String url) {
         
-        try {
-        
-            String url = "jdbc:sqlite:UsersPcSetup.db";
+        try {                  
                 return DriverManager.getConnection(url);
         
         } catch (Exception connectionFailed) {
@@ -31,7 +30,7 @@ public class DatabaseHelper {
         
     }
      
-    public void createTable(){
+    public void createUserTable(){
         
         String sql = "CREATE TABLE IF NOT EXISTS USERSPC"
              + "(Id INTEGER PRIMARY KEY AUTOINCREMENT,"
@@ -42,7 +41,7 @@ public class DatabaseHelper {
              + "Memory TEXT NOT NULL,"
              + "Storage TEXT NOT NULL)";
         
-        try(Statement stmt = conn.createStatement()){
+        try(Statement stmt = connUsers.createStatement()){
             
             stmt.execute(sql);
             
@@ -51,11 +50,25 @@ public class DatabaseHelper {
         }
     }
     
+    public void ceatePcComponentTable(String componentName){
+        
+        String sql = "CREATE TABLE IF NOT EXISTS"+ componentName 
+            + "(Id INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + "Perfscore INTEGER)";
+        
+        try(Statement stmt = connComps.createStatement()){
+            
+            stmt.execute(sql);
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+    
     public void insertData(UsersPc pc){
         
         String sql = " INSERT INTO USERSPC(Perfscore,Os,Processor,Graphics,Memory,Storage)VALUES(?,?,?,?,?,?)";
         
-        try(PreparedStatement pstmt = conn.prepareStatement(sql)){
+        try(PreparedStatement pstmt = connUsers.prepareStatement(sql)){
             
         pstmt.setInt(1,pc.getPerformanceScore());
         pstmt.setString(2, pc.getOs());
@@ -70,11 +83,13 @@ public class DatabaseHelper {
         }
     }
     
+    
+    
     public void getData(UsersPc pc){
         
         String sql = " SELECT * FROM ";
         
-        try(Statement stmt = conn.createStatement()){
+        try(Statement stmt = connUsers.createStatement()){
             
             stmt.execute(sql);
             
