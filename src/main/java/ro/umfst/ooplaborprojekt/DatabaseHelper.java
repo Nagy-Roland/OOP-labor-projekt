@@ -54,6 +54,7 @@ public class DatabaseHelper {
         
         String sql = "CREATE TABLE IF NOT EXISTS"+ componentName 
             + "(Id INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + "Name TEXT NOT NULL,"
             + "Perfscore INTEGER)";
         
         try(Statement stmt = connComps.createStatement()){
@@ -83,6 +84,18 @@ public class DatabaseHelper {
         }
     }
     
+    public void insertDataComponents(String componentName,String name,int perfScore ){
+        
+        String sql = "INSERT INTO" + componentName + "(Name,Perfscore)VALUES("+name+perfScore+")";
+        
+        try(PreparedStatement pstmt = connComps.prepareStatement(sql)){
+        
+        pstmt.setString(1,name);    
+        pstmt.setInt(2, perfScore);
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
     
     
     public void getData(UsersPc pc){
@@ -98,9 +111,17 @@ public class DatabaseHelper {
         }
     }
     
-    public void close(){
+    public void closeUsers(){
         try{
-            if(conn!=null)conn.close();
+            if(connUsers!=null)connUsers.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }           
+    }
+    
+     public void closeComps(){
+        try{
+            if(connComps!=null)connComps.close();
         }catch(SQLException e){
             e.printStackTrace();
         }           
