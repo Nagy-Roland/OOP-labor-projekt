@@ -56,52 +56,115 @@ public class Ooplaborprojekt extends JFrame {
         framePrimary = new JFrame("System requirement check");
         JPanel panel = new JPanel();
        
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         framePrimary.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         framePrimary.setSize(1000, 800);
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        framePrimary.setResizable(false);
        
+        Dimension size = new Dimension(150, 25);
+        
         JLabel label = new JLabel("Select a game:");
             JComboBox<String> gameList = new JComboBox<>(new String[]{"R6 Siege", "For Honor", "Naraka Bladepoint" , "League of Legends" , "Titanfall 2" , 
                 "Team Fortress 2" , "Elden Ring" ,"Sekiro: Shadows Die Twice" , "Wolfenstein II: The New Colossus"});
+                    gameList.setMaximumSize(size);
+                        gameList.setAlignmentX(Component.LEFT_ALIGNMENT);
         
         JLabel osLabel = new JLabel("Enter your Operating System:");
+            osLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+            
+        JLabel osExampleLabel = new JLabel("Example: Windows 10,Windows 7");
+            osLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+             
             JTextField osField = new JTextField(20);
-            
-        JLabel cpuLabel = new JLabel("Enter your CPU:");
-            JTextField cpuField = new JTextField(20);  
-            
-        JLabel gpuLabel = new JLabel("Enter your GPU:");
-            JTextField gpuField = new JTextField(20);   
-            
-        JLabel memoryLabel = new JLabel("Enter your RAM(GB):");
-            JTextField memoryField = new JTextField(20);   
-            
-        JLabel storageLabel = new JLabel("Enter the amount of your free storage space:");
-            JTextField storageField = new JTextField(20);   
-                JButton submitButton = new JButton("Submit");
-                    JButton openIdBasedSearchButton = new JButton ("Already have a setup submitted, search it by ID");
+                osField.setMaximumSize(size);
+                    osField.setAlignmentX(Component.LEFT_ALIGNMENT); 
                     
+        JLabel cpuLabel = new JLabel("Enter your CPU:");
+            cpuLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        
+        JLabel cpuExampleLabel = new JLabel("Example: Ryzen 7 5800X,Intel i5-12600K");
+            cpuExampleLabel.setAlignmentX(LEFT_ALIGNMENT);
+             
+            JTextField cpuField = new JTextField(20);  
+                cpuField.setMaximumSize(size);
+                    cpuField.setAlignmentX(Component.LEFT_ALIGNMENT);
+                    
+        JLabel gpuLabel = new JLabel("Enter your GPU:");
+            gpuLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+        
+         JLabel gpuExampleLabel = new JLabel("Example: GTX 1050 Ti,RTX 3060");
+            gpuExampleLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+            
+            JTextField gpuField = new JTextField(20);   
+                gpuField.setMaximumSize(size);
+                    gpuField.setAlignmentX(Component.LEFT_ALIGNMENT);  
+                    
+        JLabel memoryLabel = new JLabel("Enter your RAM:");
+            memoryLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+                                 
+            JLabel memoryExampleLabel = new JLabel("Example:Corsair 16GB");
+                memoryExampleLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+                
+            JTextField memoryField = new JTextField(20);   
+                memoryField.setMaximumSize(size);
+                    memoryField.setAlignmentX(Component.LEFT_ALIGNMENT);
+                    
+        JLabel storageLabel = new JLabel("Enter your Disk Storage:");
+            storageLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+                
+        JLabel storageExampleLabel = new JLabel("Example:Samsung 970 EVO 1TB");
+            storageExampleLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
+            
+            JTextField storageField = new JTextField(20);   
+                storageField.setMaximumSize(size);
+                    storageField.setAlignmentX(Component.LEFT_ALIGNMENT);
+                    
+        JButton submitButton = new JButton("Submit");
+        JLabel buttonLabel = new JLabel("Already submitted?");
+        JButton openIdBasedSearchButton = new JButton ("Search by ID");
+             
+            
         panel.add(label);  
         panel.add(gameList);
-        panel.add(Box.createVerticalStrut(100)); 
+        
+        panel.add(Box.createVerticalStrut(50)); 
+        
         panel.add(osLabel);
+        panel.add(osExampleLabel);
         panel.add(osField);
-        panel.add(Box.createVerticalStrut(50));
+        
+        panel.add(Box.createVerticalStrut(25));
+        
         panel.add(cpuLabel);
+        panel.add(cpuExampleLabel);
         panel.add(cpuField);
-        panel.add(Box.createVerticalStrut(50));
+        
+        panel.add(Box.createVerticalStrut(25));
+        
         panel.add(gpuLabel);
+        panel.add(gpuExampleLabel);
         panel.add(gpuField);
-        panel.add(Box.createVerticalStrut(50));
+        
+        panel.add(Box.createVerticalStrut(25));
+        
         panel.add(memoryLabel);
+        panel.add(memoryExampleLabel);
         panel.add(memoryField);
-        panel.add(Box.createVerticalStrut(50));
+        
+        panel.add(Box.createVerticalStrut(25));
+        
         panel.add(storageLabel);
+        panel.add(storageExampleLabel);
         panel.add(storageField);
-        panel.add(Box.createVerticalStrut(50));
+        
+        panel.add(Box.createVerticalStrut(25));
+        
         panel.add(submitButton);
+        panel.add(Box.createVerticalStrut(25));
+        panel.add(buttonLabel);
         panel.add(openIdBasedSearchButton);
-        framePrimary.add(panel, BorderLayout.NORTH);       
+        
+        framePrimary.add(panel);       
         framePrimary.setVisible(true); 
         
         submitButton.addActionListener(new ActionListener() {
@@ -130,6 +193,7 @@ public class Ooplaborprojekt extends JFrame {
         
         frameResults.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameResults.setSize(1000, 800);
+        frameResults.setResizable(false);
         panel2.setLayout(new BoxLayout(panel2, BoxLayout.Y_AXIS));
         
         frameResults.add(panel2);          
@@ -140,9 +204,9 @@ public class Ooplaborprojekt extends JFrame {
         frameIdResults = new JFrame("Id based results");
         JPanel panel3 = new JPanel();
         
-        frameResults.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frameResults.setSize(800, 800);
-        
+        frameIdResults.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frameIdResults.setSize(1000, 800);   
+        frameIdResults.setResizable(false);
         panel3.setLayout(new BoxLayout(panel3, BoxLayout.Y_AXIS));
         
         JLabel idLabel = new JLabel("Enter your ID:");
