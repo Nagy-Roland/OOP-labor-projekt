@@ -28,9 +28,11 @@ public class DatabaseHelper {
             connectionFailed.printStackTrace();
                 return null; 
         }
+        
     }
      
     public void createTable(){
+        
         String sql = "CREATE TABLE IF NOT EXISTS USERSPC"
              + "(Id INTEGER PRIMARY KEY AUTOINCREMENT,"
              + "Perfscore INTEGER,"
@@ -39,19 +41,53 @@ public class DatabaseHelper {
              + "Graphics TEXT NOT NULL,"
              + "Memory TEXT NOT NULL,"
              + "Storage TEXT NOT NULL)";
+        
         try(Statement stmt = conn.createStatement()){
+            
             stmt.execute(sql);
+            
         }catch (SQLException e){
             e.printStackTrace();
         }
     }
     
     public void insertData(UsersPc pc){
+        
         String sql = " INSERT INTO USERSPC(Perfscore,Os,Processor,Graphics,Memory,Storage)VALUES(?,?,?,?,?,?)";
+        
         try(PreparedStatement pstmt = conn.prepareStatement(sql)){
+            
+        pstmt.setInt(1,pc.getPerformanceScore());
+        pstmt.setString(2, pc.getOs());
+        pstmt.setString(3, pc.getProcessor());
+        pstmt.setString(4, pc.getGraphics());
+        pstmt.setString(5, pc.getMemory());
+        pstmt.setString(6, pc.getStorage());
+        pstmt.executeUpdate();
+        
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+    
+    public void getData(UsersPc pc){
+        
+        String sql = " SELECT * FROM ";
+        
+        try(Statement stmt = conn.createStatement()){
+            
+            stmt.execute(sql);
             
         }catch(SQLException e){
             e.printStackTrace();
         }
+    }
+    
+    public void close(){
+        try{
+            if(conn!=null)conn.close();
+        }catch(SQLException e){
+            e.printStackTrace();
+        }           
     }
 }
